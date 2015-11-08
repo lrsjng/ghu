@@ -1,0 +1,4 @@
+build/*
+es5/*
+node_modules/*
+**/vendor/*

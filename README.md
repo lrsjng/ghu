@@ -1,6 +1,6 @@
 # ghu
 
-[![license][license-img]][github] [![github][github-img]][github] [![npm][npm-img]][npm]  
+[![license][license-img]][github] [![web][web-img]][web] [![github][github-img]][github] [![npm][npm-img]][npm]  
 [![version][npm-v-img]][npm] [![downloads][npm-dm-img]][npm] [![dependencies status][gemnasium-img]][gemnasium] [![build status][travis-img]][travis]
 
 A promising build system.
@@ -13,17 +13,10 @@ A promising build system.
 ~~~
 
 
-## Usage
-
-~~~javasript
-
-~~~
-
-
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2015 Lars Jung (http://larsjung.de)
+Copyright (c) 2015 Lars Jung (https://larsjung.de)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -44,12 +37,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+[web]: https://larsjung.de/ghu/
 [github]: https://github.com/lrsjng/ghu
 [npm]: https://www.npmjs.org/package/ghu
 [gemnasium]: https://gemnasium.com/lrsjng/ghu
 [travis]: https://travis-ci.org/lrsjng/ghu
 
 [license-img]: https://img.shields.io/badge/license-MIT-a0a060.svg?style=flat-square
+[web-img]: https://img.shields.io/badge/web-larsjung.de/ghu-a0a060.svg?style=flat-square
 [github-img]: https://img.shields.io/badge/github-lrsjng/ghu-a0a060.svg?style=flat-square
 [npm-img]: https://img.shields.io/badge/npm-ghu-a0a060.svg?style=flat-square
 

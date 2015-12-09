@@ -21,7 +21,7 @@ const FIXTURES = [
     ['',               _, X, _, _, _],
     ['0',              _, X, _, _, _],
     ['1',              _, X, _, _, _],
-    [new String(),     _, _, _, _, _],
+    [new String(),     _, X, _, _, _],
     [[],               _, _, X, _, _],
     [new Array(),      _, _, X, _, _],
     [new Buffer(0),    _, _, _, X, _],
@@ -81,4 +81,27 @@ FIXTURES.forEach(x => {
     test(`util.isFn(${insp(val)}) === ${insp(exp)}`, () => {
         assert.equal(util.isFn(val), exp);
     });
+});
+
+FIXTURES.forEach(x => {
+    const val = x[0];
+    const isFn = x[5];
+
+    if (isFn) {
+        test(`util.asFn(${insp(val)}) === ${insp(val)}`, () => {
+            assert.equal(typeof val, 'function');
+            assert.equal(util.asFn(val), val);
+        });
+    } else {
+        test(`util.asFn(${insp(val)}) === () => ${insp(val)}`, () => {
+            const res = util.asFn(val);
+            assert.notEqual(typeof val, 'function');
+            assert.equal(typeof res, 'function');
+            if (Number.isNaN(val)) {
+                assert.ok(Number.isNaN(res()));
+            } else {
+                assert.equal(res(), val);
+            }
+        });
+    }
 });

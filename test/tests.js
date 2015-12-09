@@ -1,7 +1,6 @@
-import {assert} from 'chai';
+const {test} = require('scar');
 
-describe('ghu', () => {
-    it('works', () => {
-        assert.isTrue(true);
-    });
-});
+require('./lib/ghu');
+require('./lib/util');
+
+test.cli();

@@ -1,4 +1,4 @@
-build/*
-es5/*
-node_modules/*
-**/vendor/*
+build
+es5
+node_modules
+**/vendor

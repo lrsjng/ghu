@@ -1,4 +1,5 @@
 build
+coverage
 es5
 node_modules
 **/vendor

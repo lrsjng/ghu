@@ -1,6 +1,6 @@
 {
   "name": "ghu",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A promising build system.",
   "homepage": "https://larsjung.de/ghu/",
   "bugs": "https://github.com/lrsjng/ghu/issues",
@@ -15,15 +15,12 @@
     "test": "node test/tests.js",
     "cover": "isparta cover --dir coverage --report text --report html test/tests.js",
     "check": "npm run -s lint && npm run -s test",
-    "babel": "rimraf es5 && babel --presets es2015 -d es5 lib",
-    "build": "npm run -s check && npm run -s babel",
-    "precommit": "npm run -s build"
+    "precommit": "npm run -s check"
   },
-  "main": "es5/ghu.js",
+  "main": "lib/ghu.js",
   "dependencies": {
     "autoprefixer": "6.3.6",
     "babel-core": "6.9.1",
-    "babel-loader": "6.2.4",
     "chalk": "1.1.3",
     "commander": "2.9.0",
     "cssmin": "0.4.3",
@@ -33,18 +30,17 @@
     "glob": "7.0.3",
     "html-minifier": "2.1.3",
     "includeit": "0.7.1",
-    "pug": "2.0.0-alpha8",
     "jszip": "2.6.0",
     "less": "2.7.1",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
+    "pug": "2.0.0-alpha8",
     "rimraf": "2.5.2",
     "uglify-js": "2.6.2",
     "watch": "0.18.0",
     "webpack": "1.13.1"
   },
   "devDependencies": {
-    "babel-cli": "6.9.0",
     "babel-preset-es2015": "6.9.0",
     "isparta": "4.0.0",
     "scar": "0.10.1"

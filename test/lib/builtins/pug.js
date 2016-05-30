@@ -5,7 +5,7 @@ test('lib.pug is function', () => {
     assert.equal(typeof pug, 'function');
 });
 
-test('lib.pug is the same as lib.jade', () => {
+test('lib.pug === lib.jade', () => {
     assert.equal(pug, jade);
 });
 

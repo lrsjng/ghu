@@ -6,13 +6,6 @@
 A promising build system.
 
 
-## Install
-
-~~~sh
-> npm install ghu
-~~~
-
-
 ## License
 The MIT License (MIT)
 

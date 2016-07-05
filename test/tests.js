@@ -5,4 +5,4 @@ require('./lib/actions');
 require('./lib/builtins');
 require('./lib/util');
 
-test.cli();
+test.cli({sync: true});

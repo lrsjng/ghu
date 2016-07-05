@@ -1,12 +1,8 @@
 const {test, assert} = require('scar');
-const {pug, jade} = require('../../../lib/ghu');
+const {pug} = require('../../../lib/ghu');
 
 test('lib.pug is function', () => {
     assert.equal(typeof pug, 'function');
-});
-
-test('lib.pug === lib.jade', () => {
-    assert.equal(pug, jade);
 });
 
 test('lib.pug() returns function', () => {

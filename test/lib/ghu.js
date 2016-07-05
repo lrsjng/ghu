@@ -28,7 +28,6 @@ const PROPS = [
     'eslint',
     'htmlminifier',
     'includeit',
-    'jade',
     'jszip',
     'less',
     'pug',

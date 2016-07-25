@@ -1,0 +1,38 @@
+const {test, assert} = require('scar');
+const {includeit} = require('../../../lib/ghu');
+
+test('lib.includeit is function', () => {
+    assert.equal(typeof includeit, 'function');
+});
+
+test('lib.includeit() returns function', () => {
+    assert.equal(typeof includeit(), 'function');
+});
+
+test('lib.includeit - no objects', () => {
+    const fn = includeit();
+    const objs = [];
+
+    return fn(objs).then(val => {
+        assert.deepEqual(val, []);
+    });
+});
+
+test('lib.includeit - empty content throws', () => {
+    const fn = includeit();
+    const content = '';
+    const objs = [{source: 'a.js', content}];
+
+    return assert.throws(() => fn(objs), /content undefined/);
+});
+
+test('lib.includeit - space', () => {
+    const fn = includeit();
+    const content = ' ';
+    const expected = ' ';
+    const objs = [{source: 'a.js', content}];
+
+    return fn(objs).then(val => {
+        assert.deepEqual(val, [{source: 'a.js', content: expected}]);
+    });
+});

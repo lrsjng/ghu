@@ -1,3 +1,11 @@
+require('./autoprefixer');
 require('./babel');
+require('./cssmin');
+require('./eslint');
+require('./htmlminifier');
+require('./includeit');
 require('./jszip');
+require('./less');
 require('./pug');
+require('./uglify');
+require('./webpack');

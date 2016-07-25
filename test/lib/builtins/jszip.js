@@ -30,3 +30,16 @@ test('lib.jszip - two files', () => {
         assert.equal(Buffer.isBuffer(val[0].content), true);
     });
 });
+
+test('lib.jszip - compression', () => {
+    const objs = [{source: 'a.txt', content: 'aaaaaaaaaaaaaaaaaaaa'}];
+
+    return Promise.all([
+        jszip()(objs).then(val => val[0].content.length),
+        jszip({level: 0})(objs).then(val => val[0].content.length),
+        jszip({level: 9})(objs).then(val => val[0].content.length)
+    ]).then(([len, len0, len9]) => {
+        assert.ok(len === len0);
+        assert.ok(len > len9);
+    });
+});

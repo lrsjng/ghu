@@ -1,4 +1,4 @@
-const {test, assert, insp} = require('scar');
+const {test, assert} = require('scar');
 const lib = require('../../lib/ghu');
 
 const PROPS = [
@@ -36,21 +36,11 @@ const PROPS = [
     'webpack'
 ];
 
-test('lib is object', () => {
-    assert.equal(typeof lib, 'object');
-});
-
-test(`lib has the right props: ${insp(PROPS)}`, () => {
-    assert.deepEqual(Object.keys(lib).sort(), PROPS.sort());
-});
-
-test('lib.ghu is object and instance of Runner', () => {
-    assert.equal(typeof lib.ghu, 'object');
-    // assert.ok(lib.ghu instanceof lib.Runner);
-});
-
-PROPS.filter(prop => prop !== 'ghu').forEach(prop => {
-    test(`lib.${prop} is function`, () => {
-        assert.equal(typeof lib[prop], 'function');
+test('lib', () => {
+    assert.equal(typeof lib, 'object', 'is object');
+    assert.deepEqual(Object.keys(lib).sort(), PROPS.sort(), 'right props');
+    assert.equal(typeof lib.ghu, 'object', '.ghu is object');
+    PROPS.filter(prop => prop !== 'ghu').forEach(prop => {
+        assert.equal(typeof lib[prop], 'function', `.${prop} is function`);
     });
 });

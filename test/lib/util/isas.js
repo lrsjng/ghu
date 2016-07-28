@@ -36,88 +36,87 @@ const FIXTURES = [
 /* eslint-enable */
 
 test('util.isNumber()', () => {
-    assert.equal(typeof isNumber, 'function');
-});
+    assert.equal(typeof isNumber, 'function', 'is function');
 
-FIXTURES.forEach(x => {
-    const val = x[0];
-    const exp = x[1];
-
-    test(`util.isNumber(${insp(val)}) === ${insp(exp)}`, () => {
-        assert.equal(isNumber(val), exp);
+    FIXTURES.forEach((x, idx) => {
+        const val = x[0];
+        const exp = x[1];
+        assert.equal(isNumber(val), exp, `[fix#${idx}] ${insp(val)}`);
     });
 });
 
-FIXTURES.forEach(x => {
-    const val = x[0];
-    const exp = x[2];
+test('util.isString()', () => {
+    assert.equal(typeof isString, 'function', 'is function');
 
-    test(`util.isString(${insp(val)}) === ${insp(exp)}`, () => {
-        assert.equal(isString(val), exp);
+    FIXTURES.forEach((x, idx) => {
+        const val = x[0];
+        const exp = x[2];
+        assert.equal(isString(val), exp, `[fix#${idx}] ${insp(val)}`);
     });
 });
 
-FIXTURES.forEach(x => {
-    const val = x[0];
-    const exp = x[3];
+test('util.isFn()', () => {
+    assert.equal(typeof isFn, 'function', 'is function');
 
-    test(`util.isFn(${insp(val)}) === ${insp(exp)}`, () => {
-        assert.equal(isFn(val), exp);
+    FIXTURES.forEach((x, idx) => {
+        const val = x[0];
+        const exp = x[3];
+        assert.equal(isFn(val), exp, `[fix#${idx}] ${insp(val)}`);
     });
 });
 
-FIXTURES.forEach(x => {
-    const val = x[0];
-    const valIsFn = x[3];
+test('util.asFn()', () => {
+    assert.equal(typeof asFn, 'function', 'is function');
 
-    if (valIsFn) {
-        test(`util.asFn(${insp(val)}) === ${insp(val)}`, () => {
-            assert.equal(typeof val, 'function');
-            assert.equal(asFn(val), val);
-        });
-    } else {
-        test(`util.asFn(${insp(val)}) === () => ${insp(val)}`, () => {
+    FIXTURES.forEach((x, idx) => {
+        const val = x[0];
+        const valIsFn = x[3];
+        const msg = `[fix#${idx}] ${insp(val)}`;
+
+        if (valIsFn) {
+            assert.equal(typeof val, 'function', msg);
+            assert.equal(asFn(val), val, msg);
+        } else {
             const res = asFn(val);
-            assert.notEqual(typeof val, 'function');
-            assert.equal(typeof res, 'function');
+            assert.notEqual(typeof val, 'function', msg);
+            assert.equal(typeof res, 'function', msg);
             if (Number.isNaN(val)) {
-                assert.ok(Number.isNaN(res()));
+                assert.ok(Number.isNaN(res()), msg);
             } else {
-                assert.equal(res(), val);
+                assert.equal(res(), val, msg);
             }
-        });
-    }
+        }
+    });
 });
 
-FIXTURES.forEach((x, idx) => {
-    const val = x[0];
-    const valIsArray = x[4];
-    const valIsArrayLike = x[5];
+test('util.asArray()', () => {
+    assert.equal(typeof asArray, 'function', 'is function');
 
-    if (valIsArray) {
-        test(`util.asArray(${insp(val)}) === ${insp(val)}  [fix#${idx}]`, () => {
-            assert.ok(Array.isArray(val));
-            assert.equal(asArray(val), val);
-        });
-    } else if (valIsArrayLike) {
-        test(`util.asArray(${insp(val)}) === [...]  [fix#${idx}]`, () => {
+    FIXTURES.forEach((x, idx) => {
+        const val = x[0];
+        const valIsArray = x[4];
+        const valIsArrayLike = x[5];
+        const msg = `[fix#${idx}] ${insp(val)}`;
+
+        if (valIsArray) {
+            assert.ok(Array.isArray(val), msg);
+            assert.equal(asArray(val), val, msg);
+        } else if (valIsArrayLike) {
             const res = asArray(val);
-            assert.ok(Array.isArray(res));
-            assert.equal(res.length, val.length);
+            assert.ok(Array.isArray(res), msg);
+            assert.equal(res.length, val.length, msg);
             res.forEach((resi, i) => {
-                assert.equal(resi, val[i]);
+                assert.equal(resi, val[i], msg);
             });
-        });
-    } else {
-        test(`util.asArray(${insp(val)}) === [${insp(val)}]  [fix#${idx}]`, () => {
+        } else {
             const res = asArray(val);
-            assert.ok(Array.isArray(res));
-            assert.equal(res.length, 1);
+            assert.ok(Array.isArray(res), msg);
+            assert.equal(res.length, 1, msg);
             if (Number.isNaN(val)) {
-                assert.ok(Number.isNaN(res[0]));
+                assert.ok(Number.isNaN(res[0]), msg);
             } else {
-                assert.equal(res[0], val);
+                assert.equal(res[0], val, msg);
             }
-        });
-    }
+        }
+    });
 });

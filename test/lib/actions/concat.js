@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {concat} = require('../../../lib/ghu');
 
-test('lib.concat is function', () => {
-    assert.equal(typeof concat, 'function');
+test('lib.concat()', () => {
+    assert.equal(typeof concat, 'function', 'is function');
+    assert.equal(typeof concat(), 'function', '() -> function');
 });
 
-test('lib.concat() returns function', () => {
-    assert.equal(typeof concat(), 'function');
-});
-
-test('lib.concat - works', () => {
+test('lib.concat() - no objects', () => {
     const fn = concat();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.concat - works', () => {
     });
 });
 
-test('lib.concat()([{content: \'a\'}]) works', () => {
+test('lib.concat() - one object', () => {
     const fn = concat();
     const objs = [{content: 'a'}];
 
@@ -27,7 +24,7 @@ test('lib.concat()([{content: \'a\'}]) works', () => {
     });
 });
 
-test('lib.concat()([{content: \'a\'}, {content: \'b\'}]) works', () => {
+test('lib.concat() - two objects', () => {
     const fn = concat();
     const objs = [{content: 'a'}, {content: 'b'}];
 

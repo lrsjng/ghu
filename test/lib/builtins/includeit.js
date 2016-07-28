@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {includeit} = require('../../../lib/ghu');
 
-test('lib.includeit is function', () => {
+test('lib.includeit()', () => {
     assert.equal(typeof includeit, 'function');
-});
-
-test('lib.includeit() returns function', () => {
     assert.equal(typeof includeit(), 'function');
 });
 
-test('lib.includeit - no objects', () => {
+test('lib.includeit() - no objects', () => {
     const fn = includeit();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.includeit - no objects', () => {
     });
 });
 
-test('lib.includeit - empty content throws', () => {
+test('lib.includeit() - empty content throws', () => {
     const fn = includeit();
     const content = '';
     const objs = [{source: 'a.js', content}];
@@ -26,7 +23,7 @@ test('lib.includeit - empty content throws', () => {
     return assert.throws(() => fn(objs), /content undefined/);
 });
 
-test('lib.includeit - space', () => {
+test('lib.includeit() - space', () => {
     const fn = includeit();
     const content = ' ';
     const expected = ' ';

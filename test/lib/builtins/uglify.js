@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {uglify} = require('../../../lib/ghu');
 
-test('lib.uglify is function', () => {
+test('lib.uglify()', () => {
     assert.equal(typeof uglify, 'function');
-});
-
-test('lib.uglify() returns function', () => {
     assert.equal(typeof uglify(), 'function');
 });
 
-test('lib.uglify - no objects', () => {
+test('lib.uglify() - no objects', () => {
     const fn = uglify();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.uglify - no objects', () => {
     });
 });
 
-test('lib.uglify - empty', () => {
+test('lib.uglify() - empty', () => {
     const fn = uglify();
     const content = '';
     const expected = '';
@@ -29,7 +26,7 @@ test('lib.uglify - empty', () => {
     });
 });
 
-test('lib.uglify - compact', () => {
+test('lib.uglify() - compact', () => {
     const fn = uglify();
     const content = 'var abcd = 1';
     const expected = 'var abcd=1;';
@@ -40,7 +37,7 @@ test('lib.uglify - compact', () => {
     });
 });
 
-test('lib.uglify - compress', () => {
+test('lib.uglify() - compress', () => {
     const fn = uglify({compressor: {warnings: false}});
     const content = 'function fn() {\n  var abcd = 1;\n};\n;\n';
     const expected = 'function fn(){}';

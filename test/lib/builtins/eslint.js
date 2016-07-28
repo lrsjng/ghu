@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {eslint} = require('../../../lib/ghu');
 
-test('lib.eslint is function', () => {
+test('lib.eslint()', () => {
     assert.equal(typeof eslint, 'function');
-});
-
-test('lib.eslint() returns function', () => {
     assert.equal(typeof eslint(), 'function');
 });
 
-test('lib.eslint - no objects', () => {
+test('lib.eslint() - no objects', () => {
     const fn = eslint({showReport: false});
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.eslint - no objects', () => {
     });
 });
 
-test('lib.eslint - empty', () => {
+test('lib.eslint() - empty', () => {
     const fn = eslint({showReport: false});
     const content = '';
     const expected = '';
@@ -29,7 +26,7 @@ test('lib.eslint - empty', () => {
     });
 });
 
-test('lib.eslint - does not alter objects', () => {
+test('lib.eslint() - does not alter objects', () => {
     const fn = eslint({showReport: false});
     const content = 'const a = 1;';
     const objs = [{source: 'a.js', content}];

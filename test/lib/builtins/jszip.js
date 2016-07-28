@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {jszip} = require('../../../lib/ghu');
 
-test('lib.jszip is function', () => {
+test('lib.jszip()', () => {
     assert.equal(typeof jszip, 'function');
-});
-
-test('lib.jszip() returns function', () => {
     assert.equal(typeof jszip(), 'function');
 });
 
-test('lib.jszip - no file', () => {
+test('lib.jszip() - no file', () => {
     const fn = jszip();
     const objs = [];
 
@@ -20,7 +17,7 @@ test('lib.jszip - no file', () => {
     });
 });
 
-test('lib.jszip - two files', () => {
+test('lib.jszip() - two files', () => {
     const fn = jszip();
     const objs = [{source: 'a.txt', content: 'a'}, {source: 'b.txt', content: 'b'}];
 
@@ -31,7 +28,7 @@ test('lib.jszip - two files', () => {
     });
 });
 
-test('lib.jszip - compression', () => {
+test('lib.jszip() - compression', () => {
     const objs = [{source: 'a.txt', content: 'aaaaaaaaaaaaaaaaaaaa'}];
 
     return Promise.all([

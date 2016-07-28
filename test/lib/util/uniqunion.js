@@ -1,8 +1,8 @@
 const {test, assert, insp} = require('scar');
-const {union} = require('../../../lib/util');
+const {uniqunion} = require('../../../lib/util');
 
-test('util.union()', () => {
-    assert.equal(typeof union, 'function', 'is function');
+test('util.uniqunion()', () => {
+    assert.equal(typeof uniqunion, 'function', 'is function');
 
     [
         [[], [], []],
@@ -18,9 +18,15 @@ test('util.union()', () => {
         [[null], [], [null]],
         [[null], [null], [null]],
         [[undefined], [], [undefined]],
-        [[undefined], [undefined], [undefined]]
+        [[undefined], [undefined], [undefined]],
+        [[1, 1], [2], [1, 2]],
+        [[1, 2, 1], [2], [1, 2]],
+        [[1, 1], [2, 2], [1, 2]],
+        [[1, 1, 2, 2], [2], [1, 2]],
+        [[1, 2, 2, 2, 2, 2, 1], [2, 2, 2], [1, 2]],
+        [[2, 1, 2, 2, 2, 2, 2, 1], [1, 2, 2], [2, 1]]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(union(x, y), exp, msg);
+        assert.deepEqual(uniqunion(x, y), exp, msg);
     });
 });

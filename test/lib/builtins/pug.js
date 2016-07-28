@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {pug} = require('../../../lib/ghu');
 
-test('lib.pug is function', () => {
+test('lib.pug()', () => {
     assert.equal(typeof pug, 'function');
-});
-
-test('lib.pug() returns function', () => {
     assert.equal(typeof pug(), 'function');
 });
 
-test('lib.pug - no objects', () => {
+test('lib.pug() - no objects', () => {
     const fn = pug();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.pug - no objects', () => {
     });
 });
 
-test('lib.pug - empty', () => {
+test('lib.pug() - empty', () => {
     const fn = pug();
     const content = '';
     const expected = '';
@@ -29,7 +26,7 @@ test('lib.pug - empty', () => {
     });
 });
 
-test('lib.pug - p', () => {
+test('lib.pug() - p', () => {
     const fn = pug();
     const content = 'p hi';
     const expected = '<p>hi</p>';
@@ -40,7 +37,7 @@ test('lib.pug - p', () => {
     });
 });
 
-test('lib.pug - env', () => {
+test('lib.pug() - env', () => {
     const fn = pug({name: 'x'});
     const content = 'p hi #{name}';
     const expected = '<p>hi x</p>';

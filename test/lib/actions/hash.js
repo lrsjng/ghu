@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {hash} = require('../../../lib/ghu');
 
-test('lib.hash is function', () => {
-    assert.equal(typeof hash, 'function');
-});
-
-test('lib.hash() returns function', () => {
+test('lib.hash()', () => {
+    assert.equal(typeof hash, 'function', 'is function');
     assert.equal(typeof hash(), 'function');
 });
 
-test('lib.hash - no objects', () => {
+test('lib.hash() - no objects', () => {
     const fn = hash();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.hash - no objects', () => {
     });
 });
 
-test('lib.hash - empty', () => {
+test('lib.hash() - empty', () => {
     const fn = hash();
     const content = '';
     const expected = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
@@ -29,7 +26,7 @@ test('lib.hash - empty', () => {
     });
 });
 
-test('lib.hash - empty hex', () => {
+test('lib.hash() - empty hex', () => {
     const fn = hash({
         encoding: 'hex'
     });
@@ -42,7 +39,7 @@ test('lib.hash - empty hex', () => {
     });
 });
 
-test('lib.hash - empty base64', () => {
+test('lib.hash() - empty base64', () => {
     const fn = hash({
         encoding: 'base64'
     });
@@ -55,7 +52,7 @@ test('lib.hash - empty base64', () => {
     });
 });
 
-test('lib.hash - empty md5 hex', () => {
+test('lib.hash() - empty md5 hex', () => {
     const fn = hash({
         algorithm: 'md5',
         encoding: 'hex'
@@ -69,7 +66,7 @@ test('lib.hash - empty md5 hex', () => {
     });
 });
 
-test('lib.hash - empty md5 base64', () => {
+test('lib.hash() - empty md5 base64', () => {
     const fn = hash({
         algorithm: 'md5',
         encoding: 'base64'

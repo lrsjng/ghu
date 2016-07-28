@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {webpack} = require('../../../lib/ghu');
 
-test('lib.webpack is function', () => {
+test('lib.webpack()', () => {
     assert.equal(typeof webpack, 'function');
-});
-
-test('lib.webpack() returns function', () => {
     assert.equal(typeof webpack(), 'function');
 });
 
-test('lib.webpack - no objects', () => {
+test('lib.webpack() - no objects', () => {
     const fn = webpack({}, {showStats: false});
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.webpack - no objects', () => {
     });
 });
 
-test('lib.webpack - empty', () => {
+test('lib.webpack() - empty', () => {
     const fn = webpack({}, {showStats: false});
     const content = '';
     const objs = [{source: 'empty.js', content}];
@@ -31,7 +28,7 @@ test('lib.webpack - empty', () => {
     });
 });
 
-test('lib.webpack - minimal', () => {
+test('lib.webpack() - minimal', () => {
     const fn = webpack({}, {showStats: false});
     const content = 'module.exports = 1';
     const objs = [{source: 'minimal.js', content}];

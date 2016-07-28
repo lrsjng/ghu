@@ -1,8 +1,8 @@
 const {test, assert, insp} = require('scar');
-const {diff} = require('../../../lib/util');
+const {uniqdiff} = require('../../../lib/util');
 
-test('util.diff()', () => {
-    assert.equal(typeof diff, 'function', 'is function');
+test('util.uniqdiff()', () => {
+    assert.equal(typeof uniqdiff, 'function', 'is function');
 
     [
         [[], [], []],
@@ -10,7 +10,7 @@ test('util.diff()', () => {
         [[], [1], []],
         [[1], [1], []],
         [[1], [2], [1]],
-        [[1, 2], [2], [1]],
+        [[1, 2], [2, 2], [1]],
         [[1], [1, 2], []],
         [[1], [2, 1], []],
         [[3], [2, 1], [3]],
@@ -18,9 +18,14 @@ test('util.diff()', () => {
         [[null], [], [null]],
         [[null], [null], []],
         [[undefined], [], [undefined]],
-        [[undefined], [undefined], []]
+        [[undefined], [undefined], []],
+        [[1, 1], [2], [1]],
+        [[1, 2, 1], [2], [1]],
+        [[1, 1], [2, 2], [1]],
+        [[1, 1, 2, 2], [2], [1]],
+        [[1, 2, 2, 2, 2, 2, 1], [2, 2, 2], [1]]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(diff(x, y), exp, msg);
+        assert.deepEqual(uniqdiff(x, y), exp, msg);
     });
 });

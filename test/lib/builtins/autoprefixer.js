@@ -1,15 +1,12 @@
 const {test, assert} = require('scar');
 const {autoprefixer} = require('../../../lib/ghu');
 
-test('lib.autoprefixer is function', () => {
+test('lib.autoprefixer()', () => {
     assert.equal(typeof autoprefixer, 'function');
-});
-
-test('lib.autoprefixer() returns function', () => {
     assert.equal(typeof autoprefixer(), 'function');
 });
 
-test('lib.autoprefixer - no objects', () => {
+test('lib.autoprefixerd() - no objects', () => {
     const fn = autoprefixer();
     const objs = [];
 
@@ -18,7 +15,7 @@ test('lib.autoprefixer - no objects', () => {
     });
 });
 
-test('lib.autoprefixer - empty', () => {
+test('lib.autoprefixer() - empty', () => {
     const fn = autoprefixer();
     const content = '';
     const expected = '';
@@ -29,7 +26,7 @@ test('lib.autoprefixer - empty', () => {
     });
 });
 
-test('lib.autoprefixer - empty rule', () => {
+test('lib.autoprefixer() - empty rule', () => {
     const fn = autoprefixer();
     const content = 'div {}';
     const expected = 'div {}';
@@ -40,7 +37,7 @@ test('lib.autoprefixer - empty rule', () => {
     });
 });
 
-test('lib.autoprefixer - noncompact', () => {
+test('lib.autoprefixer() - noncompact', () => {
     const fn = autoprefixer();
     const content = 'div {    }';
     const expected = 'div {    }';
@@ -51,7 +48,7 @@ test('lib.autoprefixer - noncompact', () => {
     });
 });
 
-test('lib.autoprefixer - prefixing', () => {
+test('lib.autoprefixer() - prefixing', () => {
     const fn = autoprefixer();
     const content = 'div {display: flex}';
     const expected = 'div {display: -ms-flexbox;display: flex}'; // this will break!

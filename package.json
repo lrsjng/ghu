@@ -1,7 +1,7 @@
 {
   "name": "ghu",
-  "version": "0.11.0",
-  "description": "A promising build system.",
+  "version": "0.12.0",
+  "description": "Promising build system.",
   "homepage": "https://larsjung.de/ghu/",
   "bugs": "https://github.com/lrsjng/ghu/issues",
   "author": "Lars Jung <lrsjng@gmail.com> (https://larsjung.de)",
@@ -19,31 +19,31 @@
   },
   "main": "lib/ghu.js",
   "dependencies": {
-    "autoprefixer": "6.3.7",
-    "babel-core": "6.11.4",
+    "autoprefixer": "6.5.3",
+    "babel-core": "6.18.2",
     "chalk": "1.1.3",
     "commander": "2.9.0",
     "cssmin": "0.4.3",
-    "dateformat": "1.0.12",
+    "dateformat": "2.0.0",
     "escape-string-regexp": "1.0.5",
-    "eslint": "3.1.1",
-    "glob": "7.0.5",
-    "html-minifier": "3.0.1",
-    "includeit": "0.8.0",
+    "eslint": "3.11.1",
+    "glob": "7.1.1",
+    "html-minifier": "3.2.3",
+    "includeit": "1.0.0",
     "jszip": "=2.6.1",
     "less": "2.7.1",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
-    "pug": "2.0.0-beta4",
+    "pug": "2.0.0-beta6",
     "rimraf": "2.5.4",
-    "uglify-js": "2.7.0",
-    "watch": "0.19.1",
-    "webpack": "1.13.1"
+    "uglify-js": "2.7.5",
+    "watch": "1.0.1",
+    "webpack": "1.13.3"
   },
   "devDependencies": {
-    "babel-preset-es2015": "6.9.0",
+    "babel-preset-es2015": "6.18.0",
     "isparta": "4.0.0",
-    "scar": "0.16.5"
+    "scar": "0.18.0"
   },
   "engines": {
     "node": ">=6.0.0"

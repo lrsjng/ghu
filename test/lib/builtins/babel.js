@@ -1,7 +1,7 @@
 const {test, assert} = require('scar');
 const {babel} = require('../../../lib/ghu');
-const ES_5 = {
-    presets: ['es2015']
+const CONF = {
+    presets: ['env']
 };
 
 test('lib.babel()', () => {
@@ -30,7 +30,7 @@ test('lib.babel() - empty', () => {
 });
 
 test('lib.babel() - empty to es5', () => {
-    const fn = babel(ES_5);
+    const fn = babel(CONF);
     const content = '';
     const expected = '"use strict";';
     const objs = [{content}];
@@ -41,7 +41,7 @@ test('lib.babel() - empty to es5', () => {
 });
 
 test('lib.babel() - arrow to es5', () => {
-    const fn = babel(ES_5);
+    const fn = babel(CONF);
     const content = 'x => x*x';
     const expected = '"use strict";\n\n(function (x) {\n  return x * x;\n});';
     const objs = [{content}];
@@ -52,7 +52,7 @@ test('lib.babel() - arrow to es5', () => {
 });
 
 test('lib.babel() - arrow-2 to es5', () => {
-    const fn = babel(ES_5);
+    const fn = babel(CONF);
     const content = '(x,y) => x*y';
     const expected = '"use strict";\n\n(function (x, y) {\n  return x * y;\n});';
     const objs = [{content}];

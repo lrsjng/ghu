@@ -50,8 +50,8 @@ test('lib.autoprefixer() - noncompact', () => {
 
 test('lib.autoprefixer() - prefixing', () => {
     const fn = autoprefixer();
-    const content = 'div {display: flex}';
-    const expected = 'div {display: -ms-flexbox;display: flex}'; // this will break!
+    const content = '::placeholder {}';
+    const expected = '::-webkit-input-placeholder {}\n:-ms-input-placeholder {}\n::-ms-input-placeholder {}\n::placeholder {}';
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {

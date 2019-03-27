@@ -1,6 +1,6 @@
 {
   "name": "ghu",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Promising build system.",
   "homepage": "https://larsjung.de/ghu/",
   "bugs": "https://github.com/lrsjng/ghu/issues",
@@ -31,7 +31,7 @@
     "glob": "7.1.3",
     "html-minifier": "3.5.21",
     "includeit": "1.3.0",
-    "jszip": "=2.6.1",
+    "jszip": "=3.2.1",
     "less": "3.9.0",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",

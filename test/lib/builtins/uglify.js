@@ -38,7 +38,7 @@ test('lib.uglify() - compact', () => {
 });
 
 test('lib.uglify() - compress', () => {
-    const fn = uglify({compressor: {warnings: false}});
+    const fn = uglify();
     const content = 'function fn() {\n  var abcd = 1;\n};\n;\n';
     const expected = 'function fn(){}';
     const objs = [{source: 'a.js', content}];

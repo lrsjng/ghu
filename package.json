@@ -37,7 +37,7 @@
     "mkdirp": "0.5.1",
     "pug": "2.0.3",
     "rimraf": "2.6.3",
-    "uglify-js": "2.7.5",
+    "uglify-js": "3.5.2",
     "watch": "1.0.2",
     "webpack": "1.13.3"
   },

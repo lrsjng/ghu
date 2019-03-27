@@ -36,7 +36,6 @@ test('lib.jszip() - compression', () => {
         jszip({level: 0})(objs).then(val => val[0].content.length),
         jszip({level: 9})(objs).then(val => val[0].content.length)
     ]).then(([len, len0, len9]) => {
-        console.log(len, len0, len9);
         assert.ok(len === len0);
         assert.ok(len > len9);
     });

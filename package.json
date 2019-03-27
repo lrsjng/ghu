@@ -39,7 +39,7 @@
     "rimraf": "2.6.3",
     "uglify-js": "3.5.2",
     "watch": "1.0.2",
-    "webpack": "1.13.3"
+    "webpack": "4.29.6"
   },
   "devDependencies": {
     "isparta": "4.1.1",

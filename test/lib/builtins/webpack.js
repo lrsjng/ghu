@@ -24,19 +24,18 @@ test('lib.webpack() - empty', () => {
         assert.equal(val.length, 1);
         assert.equal(val[0].source, 'empty.js');
         assert.ok(val[0].content.match(/function/));
-        assert.ok(val[0].content.match(/webpack/));
     });
 });
 
 test('lib.webpack() - minimal', () => {
     const fn = webpack({}, {showStats: false});
-    const content = 'module.exports = 1';
+    const content = 'module.exports = " Heyhoh "';
     const objs = [{source: 'minimal.js', content}];
 
     return fn(objs).then(val => {
         assert.equal(val.length, 1);
         assert.equal(val[0].source, 'minimal.js');
         assert.ok(val[0].content.match(/function/));
-        assert.ok(val[0].content.match(/webpack/));
+        assert.ok(val[0].content.match(/ Heyhoh /));
     });
 });

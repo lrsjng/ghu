@@ -39,3 +39,98 @@ test('lib.webpack() - minimal', () => {
         assert.ok(val[0].content.match(/ Heyhoh /));
     });
 });
+
+test('lib.webpack.cfg() - no args', () => {
+    const expected = {
+        mode: 'none',
+        module: {
+            rules: [
+                {
+                    include: undefined,
+                    loader: 'babel-loader',
+                    query: {
+                        cacheDirectory: true,
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            ]
+        }
+    };
+
+    assert.deepEqual(webpack.cfg(), expected);
+});
+
+test('lib.webpack.cfg() - includes', () => {
+    const inc = {};
+    const expected = {
+        mode: 'none',
+        module: {
+            rules: [
+                {
+                    include: inc,
+                    loader: 'babel-loader',
+                    query: {
+                        cacheDirectory: true,
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            ]
+        }
+    };
+
+    assert.deepEqual(webpack.cfg(inc), expected);
+});
+
+test('lib.webpack.cfg_und() - no args', () => {
+    const expected = {
+        mode: 'none',
+        module: {
+            rules: [
+                {
+                    include: undefined,
+                    loader: 'babel-loader',
+                    query: {
+                        cacheDirectory: true,
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            ]
+        },
+        output: {
+            library: undefined,
+            libraryTarget: 'umd',
+            umdNamedDefine: true,
+            globalObject: '(typeof self !== \'undefined\' ? self : this)'
+        }
+    };
+
+    assert.deepEqual(webpack.cfg_umd(), expected);
+});
+
+test('lib.webpack.cfg_und() - name and includes', () => {
+    const name = {};
+    const inc = {};
+    const expected = {
+        mode: 'none',
+        module: {
+            rules: [
+                {
+                    include: inc,
+                    loader: 'babel-loader',
+                    query: {
+                        cacheDirectory: true,
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            ]
+        },
+        output: {
+            library: name,
+            libraryTarget: 'umd',
+            umdNamedDefine: true,
+            globalObject: '(typeof self !== \'undefined\' ? self : this)'
+        }
+    };
+
+    assert.deepEqual(webpack.cfg_umd(name, inc), expected);
+});

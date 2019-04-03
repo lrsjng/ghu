@@ -1,7 +1,7 @@
 const {test, assert} = require('scar');
 const {babel} = require('../../../lib/ghu');
 const CONF = {
-    presets: ['env']
+    presets: ['@babel/preset-env']
 };
 
 test('lib.babel()', () => {

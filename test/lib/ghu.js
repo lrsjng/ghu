@@ -25,7 +25,6 @@ const PROPS = [
     'autoprefixer',
     'babel',
     'cssmin',
-    'eslint',
     'htmlminifier',
     'includeit',
     'jszip',

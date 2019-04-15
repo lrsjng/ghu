@@ -1,7 +1,6 @@
 require('./autoprefixer');
 require('./babel');
 require('./cssmin');
-require('./eslint');
 require('./htmlminifier');
 require('./includeit');
 require('./jszip');

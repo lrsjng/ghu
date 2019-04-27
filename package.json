@@ -1,6 +1,6 @@
 {
   "name": "ghu",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Promising build system.",
   "homepage": "https://larsjung.de/ghu/",
   "bugs": "https://github.com/lrsjng/ghu/issues",
@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "node test",
-    "cover": "isparta cover --dir coverage --report text --report html test",
+    "cover": "nyc --require @babel/register --reporter text --reporter html node test",
     "check": "npm run -s lint && npm run -s test",
     "precommit": "npm run -s check"
   },
@@ -42,8 +42,9 @@
     "webpack": "4.30.0"
   },
   "devDependencies": {
+    "@babel/register": "7.4.4",
     "eslint": "5.16.0",
-    "isparta": "4.1.1",
+    "nyc": "14.0.0",
     "scar": "1.6.0"
   },
   "engines": {

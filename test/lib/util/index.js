@@ -2,7 +2,7 @@ require('./diff');
 require('./isas');
 require('./once');
 require('./pass');
-require('./promisedCbCall');
+require('./promised_cb_call');
 require('./run');
 require('./union');
 require('./uniq');

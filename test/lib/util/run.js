@@ -1,5 +1,5 @@
 const {test, assert} = require('scar');
-const {runSequential, runConcurrent} = require('../../../lib/util');
+const {run_sequential, run_concurrent} = require('../../../lib/util');
 
 const createFn = delay => {
     const fn = () => new Promise(resolve => {
@@ -16,11 +16,11 @@ const createFns = (n = 8, delay = 10) => {
     return new Array(n).fill(0).map(() => createFn(delay));
 };
 
-test('util.runSequential()', () => {
-    assert.equal(typeof runSequential, 'function', 'is function');
+test('util.run_sequential()', () => {
+    assert.equal(typeof run_sequential, 'function', 'is function');
 
     const fns = createFns();
-    return runSequential(fns).then(() => {
+    return run_sequential(fns).then(() => {
         fns.forEach((fn, idx) => {
             assert.equal(typeof fn.start, 'number', `fn#${idx} start`);
             assert.equal(typeof fn.end, 'number', `fn#${idx} end`);
@@ -38,11 +38,11 @@ test('util.runSequential()', () => {
     });
 });
 
-test('util.runConcurrent()', () => {
-    assert.equal(typeof runConcurrent, 'function', 'is function');
+test('util.run_concurrent()', () => {
+    assert.equal(typeof run_concurrent, 'function', 'is function');
 
     const fns = createFns();
-    return runConcurrent(fns).then(() => {
+    return run_concurrent(fns).then(() => {
         fns.forEach((fn, idx) => {
             assert.equal(typeof fn.start, 'number', `fn#${idx} start`);
             assert.equal(typeof fn.end, 'number', `fn#${idx} end`);

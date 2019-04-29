@@ -1,5 +1,5 @@
 const {test, assert, spy, uniq} = require('scar');
-const {pass, passerr} = require('../../../lib/util');
+const {pass, pass_err} = require('../../../lib/util');
 
 test('util.pass()', () => {
     assert.equal(typeof pass, 'function', 'is function');
@@ -39,15 +39,15 @@ test('util.pass() - skipped', () => {
         );
 });
 
-test('util.passerr()', () => {
-    assert.equal(typeof passerr, 'function', 'is function');
+test('util.pass_err()', () => {
+    assert.equal(typeof pass_err, 'function', 'is function');
 });
 
-test('util.passerr() - passes', () => {
+test('util.pass_err() - passes', () => {
     const fn = spy();
     const val = uniq.id();
     return Promise.reject(val)
-        .catch(passerr(fn))
+        .catch(pass_err(fn))
         .then(
             () => {
                 assert.fail('should take this path');
@@ -61,11 +61,11 @@ test('util.passerr() - passes', () => {
         );
 });
 
-test('util.passerr() - skipped', () => {
+test('util.pass_err() - skipped', () => {
     const fn = spy();
     const val = uniq.id();
     return Promise.resolve(val)
-        .catch(passerr(fn))
+        .catch(pass_err(fn))
         .then(
             x => {
                 assert.equal(val, x);

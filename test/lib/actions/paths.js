@@ -2,13 +2,13 @@ const {resolve} = require('path');
 const {test, assert, insp} = require('scar');
 const {paths} = require('../../../lib/ghu');
 
-const assertPromise = p => {
+const assert_promise = p => {
     assert.equal(p, Promise.resolve(p), `expected ${insp(p)} to be a promise`);
 };
 
 test('lib.paths()', () => {
     assert.equal(typeof paths, 'function', 'is function');
-    assertPromise(paths());
+    assert_promise(paths());
 });
 
 test('lib.paths() - no args', () => {

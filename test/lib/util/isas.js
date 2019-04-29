@@ -70,10 +70,10 @@ test('util.as_fn()', () => {
 
     FIXTURES.forEach((x, idx) => {
         const val = x[0];
-        const valIsFn = x[3];
+        const val_is_fn = x[3];
         const msg = `[fix#${idx}] ${insp(val)}`;
 
-        if (valIsFn) {
+        if (val_is_fn) {
             assert.equal(typeof val, 'function', msg);
             assert.equal(as_fn(val), val, msg);
         } else {
@@ -94,14 +94,14 @@ test('util.as_array()', () => {
 
     FIXTURES.forEach((x, idx) => {
         const val = x[0];
-        const valIsArray = x[4];
-        const valIsArrayLike = x[5];
+        const val_is_array = x[4];
+        const val_is_array_like = x[5];
         const msg = `[fix#${idx}] ${insp(val)}`;
 
-        if (valIsArray) {
+        if (val_is_array) {
             assert.ok(Array.isArray(val), msg);
             assert.equal(as_array(val), val, msg);
-        } else if (valIsArrayLike) {
+        } else if (val_is_array_like) {
             const res = as_array(val);
             assert.ok(Array.isArray(res), msg);
             assert.equal(res.length, val.length, msg);

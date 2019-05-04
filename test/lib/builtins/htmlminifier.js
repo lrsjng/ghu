@@ -11,7 +11,7 @@ test('lib.htmlminifier() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.htmlminifier() - empty', () => {
     const objs = [{source: 'a.html', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.html', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.html', content: expected}]);
     });
 });
 
@@ -33,6 +33,6 @@ test('lib.htmlminifier() - whitespace', () => {
     const objs = [{source: 'a.html', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.html', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.html', content: expected}]);
     });
 });

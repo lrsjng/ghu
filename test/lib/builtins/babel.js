@@ -14,7 +14,7 @@ test('lib.babel() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -25,7 +25,7 @@ test('lib.babel() - empty', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });
 
@@ -36,7 +36,7 @@ test('lib.babel() - empty to es5', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });
 
@@ -47,7 +47,7 @@ test('lib.babel() - arrow to es5', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });
 
@@ -58,6 +58,6 @@ test('lib.babel() - arrow-2 to es5', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });

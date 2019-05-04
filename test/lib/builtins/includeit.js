@@ -11,7 +11,7 @@ test('lib.includeit() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -30,6 +30,6 @@ test('lib.includeit() - space', () => {
     const objs = [{source: 'a.js', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.js', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.js', content: expected}]);
     });
 });

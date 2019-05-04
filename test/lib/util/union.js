@@ -21,6 +21,6 @@ test('util.union()', () => {
         [[undefined], [undefined], [undefined]]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(union(x, y), exp, msg);
+        assert.deep_equal(union(x, y), exp, msg);
     });
 });

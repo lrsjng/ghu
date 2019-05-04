@@ -11,7 +11,7 @@ test('lib.concat() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: '@concat', content: ''}]);
+        assert.deep_equal(val, [{source: '@concat', content: ''}]);
     });
 });
 
@@ -20,7 +20,7 @@ test('lib.concat() - one object', () => {
     const objs = [{content: 'a'}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: '@concat', content: 'a'}]);
+        assert.deep_equal(val, [{source: '@concat', content: 'a'}]);
     });
 });
 
@@ -29,6 +29,6 @@ test('lib.concat() - two objects', () => {
     const objs = [{content: 'a'}, {content: 'b'}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: '@concat', content: 'a\nb'}]);
+        assert.deep_equal(val, [{source: '@concat', content: 'a\nb'}]);
     });
 });

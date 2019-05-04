@@ -11,7 +11,7 @@ test('lib.pug() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.pug() - empty', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });
 
@@ -33,7 +33,7 @@ test('lib.pug() - p', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });
 
@@ -44,6 +44,6 @@ test('lib.pug() - env', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content: expected}]);
+        assert.deep_equal(val, [{content: expected}]);
     });
 });

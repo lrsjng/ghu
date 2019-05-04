@@ -17,6 +17,6 @@ test('util.uniq()', () => {
         [[1, 2, undefined, undefined], [1, 2, undefined]]
     ].forEach(([x, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}) -> ${insp(exp)}`;
-        assert.deepEqual(uniq(x), exp, msg);
+        assert.deep_equal(uniq(x), exp, msg);
     });
 });

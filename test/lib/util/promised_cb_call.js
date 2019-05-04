@@ -51,7 +51,7 @@ test('util.promised_cb_call() - two callback vals', () => {
     assert.equal(p, Promise.resolve(p));
     return p.then(
         x => {
-            assert.deepEqual(x, [val0, val1]);
+            assert.deep_equal(x, [val0, val1]);
         },
         () => {
             assert.fail('should not take this path');
@@ -71,7 +71,7 @@ test('util.promised_cb_call() - three callback vals', () => {
     assert.equal(p, Promise.resolve(p));
     return p.then(
         x => {
-            assert.deepEqual(x, [val0, val1, val2]);
+            assert.deep_equal(x, [val0, val1, val2]);
         },
         () => {
             assert.fail('should not take this path');
@@ -92,7 +92,7 @@ test('util.promised_cb_call() - err', () => {
             assert.fail('should not take this path');
         },
         x => {
-            assert.deepEqual(x, err);
+            assert.deep_equal(x, err);
         }
     );
 });

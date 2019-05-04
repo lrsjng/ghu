@@ -26,6 +26,6 @@ test('util.uniqdiff()', () => {
         [[1, 2, 2, 2, 2, 2, 1], [2, 2, 2], [1]]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(uniqdiff(x, y), exp, msg);
+        assert.deep_equal(uniqdiff(x, y), exp, msg);
     });
 });

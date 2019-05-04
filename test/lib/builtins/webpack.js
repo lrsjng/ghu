@@ -11,7 +11,7 @@ test('lib.webpack() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -57,7 +57,7 @@ test('lib.webpack.cfg() - no args', () => {
         }
     };
 
-    assert.deepEqual(webpack.cfg(), expected);
+    assert.deep_equal(webpack.cfg(), expected);
 });
 
 test('lib.webpack.cfg() - includes', () => {
@@ -78,7 +78,7 @@ test('lib.webpack.cfg() - includes', () => {
         }
     };
 
-    assert.deepEqual(webpack.cfg(inc), expected);
+    assert.deep_equal(webpack.cfg(inc), expected);
 });
 
 test('lib.webpack.cfg_und() - no args', () => {
@@ -104,7 +104,7 @@ test('lib.webpack.cfg_und() - no args', () => {
         }
     };
 
-    assert.deepEqual(webpack.cfg_umd(), expected);
+    assert.deep_equal(webpack.cfg_umd(), expected);
 });
 
 test('lib.webpack.cfg_und() - name and includes', () => {
@@ -132,5 +132,5 @@ test('lib.webpack.cfg_und() - name and includes', () => {
         }
     };
 
-    assert.deepEqual(webpack.cfg_umd(name, inc), expected);
+    assert.deep_equal(webpack.cfg_umd(name, inc), expected);
 });

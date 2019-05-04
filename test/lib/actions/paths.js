@@ -13,7 +13,7 @@ test('lib.paths()', () => {
 
 test('lib.paths() - no args', () => {
     return paths().then(res => {
-        assert.deepEqual(res, []);
+        assert.deep_equal(res, []);
     });
 });
 
@@ -57,7 +57,7 @@ test('lib.paths() - sequence fixtures', () => {
         [`${assets}: *, !a*`, [b, c, sub]]
     ].map(([str, exp], idx) => {
         return paths(str).then(res => {
-            assert.deepEqual(res, exp, `fix#${idx} res: ${res}`);
+            assert.deep_equal(res, exp, `fix#${idx} res: ${res}`);
         });
     }));
 });

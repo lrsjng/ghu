@@ -11,7 +11,7 @@ test('lib.uglify() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.uglify() - empty', () => {
     const objs = [{source: 'a.js', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.js', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.js', content: expected}]);
     });
 });
 
@@ -33,7 +33,7 @@ test('lib.uglify() - compact', () => {
     const objs = [{source: 'a.js', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.js', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.js', content: expected}]);
     });
 });
 
@@ -44,6 +44,6 @@ test('lib.uglify() - compress', () => {
     const objs = [{source: 'a.js', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.js', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.js', content: expected}]);
     });
 });

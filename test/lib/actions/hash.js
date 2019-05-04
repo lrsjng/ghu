@@ -11,7 +11,7 @@ test('lib.hash() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.hash() - empty', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content, hash: expected}]);
+        assert.deep_equal(val, [{content, hash: expected}]);
     });
 });
 
@@ -35,7 +35,7 @@ test('lib.hash() - empty hex', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content, hash: expected}]);
+        assert.deep_equal(val, [{content, hash: expected}]);
     });
 });
 
@@ -48,7 +48,7 @@ test('lib.hash() - empty base64', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content, hash: expected}]);
+        assert.deep_equal(val, [{content, hash: expected}]);
     });
 });
 
@@ -62,7 +62,7 @@ test('lib.hash() - empty md5 hex', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content, hash: expected}]);
+        assert.deep_equal(val, [{content, hash: expected}]);
     });
 });
 
@@ -76,6 +76,6 @@ test('lib.hash() - empty md5 base64', () => {
     const objs = [{content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{content, hash: expected}]);
+        assert.deep_equal(val, [{content, hash: expected}]);
     });
 });

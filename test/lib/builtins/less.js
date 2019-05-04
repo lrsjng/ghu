@@ -11,7 +11,7 @@ test('lib.less() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.less() - empty', () => {
     const objs = [{source: 'a.less', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.less', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.less', content: expected}]);
     });
 });
 
@@ -33,7 +33,7 @@ test('lib.less() - empty rule', () => {
     const objs = [{source: 'a.less', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.less', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.less', content: expected}]);
     });
 });
 
@@ -44,7 +44,7 @@ test('lib.less() - nested rule', () => {
     const objs = [{source: 'a.less', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.less', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.less', content: expected}]);
     });
 });
 

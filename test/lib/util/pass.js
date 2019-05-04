@@ -14,8 +14,8 @@ test('util.pass() - passes', () => {
             x => {
                 assert.equal(val, x);
                 assert.equal(fn.calls.length, 1);
-                assert.deepEqual(fn.calls[0].args, [val]);
-                assert.deepEqual(fn.calls[0].ret, undefined);
+                assert.deep_equal(fn.calls[0].args, [val]);
+                assert.deep_equal(fn.calls[0].ret, undefined);
             },
             () => {
                 assert.fail('should take this path');
@@ -55,8 +55,8 @@ test('util.pass_err() - passes', () => {
             x => {
                 assert.equal(val, x);
                 assert.equal(fn.calls.length, 1);
-                assert.deepEqual(fn.calls[0].args, [val]);
-                assert.deepEqual(fn.calls[0].ret, undefined);
+                assert.deep_equal(fn.calls[0].args, [val]);
+                assert.deep_equal(fn.calls[0].ret, undefined);
             }
         );
 });

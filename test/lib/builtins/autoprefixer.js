@@ -11,7 +11,7 @@ test('lib.autoprefixerd() - no objects', () => {
     const objs = [];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, []);
+        assert.deep_equal(val, []);
     });
 });
 
@@ -22,7 +22,7 @@ test('lib.autoprefixer() - empty', () => {
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.css', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.css', content: expected}]);
     });
 });
 
@@ -33,7 +33,7 @@ test('lib.autoprefixer() - empty rule', () => {
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.css', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.css', content: expected}]);
     });
 });
 
@@ -44,7 +44,7 @@ test('lib.autoprefixer() - noncompact', () => {
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.css', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.css', content: expected}]);
     });
 });
 
@@ -55,6 +55,6 @@ test('lib.autoprefixer() - prefixing', () => {
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {
-        assert.deepEqual(val, [{source: 'a.css', content: expected}]);
+        assert.deep_equal(val, [{source: 'a.css', content: expected}]);
     });
 });

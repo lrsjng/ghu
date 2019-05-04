@@ -27,6 +27,6 @@ test('util.uniqunion()', () => {
         [[2, 1, 2, 2, 2, 2, 2, 1], [1, 2, 2], [2, 1]]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(uniqunion(x, y), exp, msg);
+        assert.deep_equal(uniqunion(x, y), exp, msg);
     });
 });

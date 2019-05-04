@@ -21,6 +21,6 @@ test('util.diff()', () => {
         [[undefined], [undefined], []]
     ].forEach(([x, y, exp], idx) => {
         const msg = `[fix#${idx}] (${insp(x)}, ${insp(y)}) -> ${insp(exp)}`;
-        assert.deepEqual(diff(x, y), exp, msg);
+        assert.deep_equal(diff(x, y), exp, msg);
     });
 });

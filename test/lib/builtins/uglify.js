@@ -47,3 +47,11 @@ test('lib.uglify() - compress', () => {
         assert.deep_equal(val, [{source: 'a.js', content: expected}]);
     });
 });
+
+test('lib.uglify() - bad code throws', () => {
+    const fn = uglify();
+    const content = 'function fn(';
+    const objs = [{source: 'a.js', content}];
+
+    assert.throws(() => fn(objs));
+});

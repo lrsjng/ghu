@@ -23,7 +23,7 @@ test('lib.webpack() - empty', () => {
     return fn(objs).then(val => {
         assert.equal(val.length, 1);
         assert.equal(val[0].source, 'empty.js');
-        assert.ok(val[0].content.match(/function/));
+        assert.equal(val[0].content, '');
     });
 });
 

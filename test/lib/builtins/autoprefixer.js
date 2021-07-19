@@ -51,7 +51,7 @@ test('lib.autoprefixer() - noncompact', () => {
 test('lib.autoprefixer() - prefixing', () => {
     const fn = autoprefixer();
     const content = '::placeholder {}';
-    const expected = '::-moz-placeholder {}\n:-ms-input-placeholder {}\n::-ms-input-placeholder {}\n::placeholder {}';
+    const expected = '::-moz-placeholder {}\n:-ms-input-placeholder {}\n::placeholder {}';
     const objs = [{source: 'a.css', content}];
 
     return fn(objs).then(val => {

@@ -48,7 +48,7 @@ test('lib.webpack.cfg() - no args', () => {
                 {
                     include: undefined,
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         cacheDirectory: true,
                         presets: ['@babel/preset-env']
                     }
@@ -69,7 +69,7 @@ test('lib.webpack.cfg() - includes', () => {
                 {
                     include: inc,
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         cacheDirectory: true,
                         presets: ['@babel/preset-env']
                     }
@@ -89,7 +89,7 @@ test('lib.webpack.cfg_und() - no args', () => {
                 {
                     include: undefined,
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         cacheDirectory: true,
                         presets: ['@babel/preset-env']
                     }
@@ -117,7 +117,7 @@ test('lib.webpack.cfg_und() - name and includes', () => {
                 {
                     include: inc,
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         cacheDirectory: true,
                         presets: ['@babel/preset-env']
                     }
